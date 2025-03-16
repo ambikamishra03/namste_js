@@ -19,4 +19,4 @@ setInterval(()=>{
 clearInterval(2); //will clear second timer
 // clearTimeout(1); // will clear first timer
 // clearTimeout(2);  //will clear second timer
-// clearInterval(3); //will clear third timer
+clearInterval(3); //will clear third timer
