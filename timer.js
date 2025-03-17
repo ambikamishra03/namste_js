@@ -6,7 +6,7 @@ setTimeout(()=>{
 },3000)
 
 let x=0;
-setInterval(()=>{
+setInterval(()=>{ 
  x++;
  console.log(x);
 },3000);
