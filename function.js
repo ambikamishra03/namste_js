@@ -1,4 +1,4 @@
-a();
+ a();
 // x(); // it can not be hoisted
 
 // function statement or declaration 
