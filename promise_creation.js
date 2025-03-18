@@ -29,15 +29,42 @@ const validateCart = (cart) =>{
 return true;
 }
 
-// consumer part
-const promise = createOrder(cart);
-console.log(promise);
+const proceedToPay = (orderId) =>{
+  // handle payment
+  return new Promise((resolve, reject)=>{
+     resolve("Payment successful");
+  })
+}
 
-promise.then((orderId) =>{
-    console.log(orderId);
+// consumer part
+createOrder(cart)
+.then((orderId) =>{
+    console.log(orderId); 
+    return orderId; 
+}).then((orderId)=>{
+   return proceedToPay(orderId);
+}).then((paymentInfo) =>{
+   console.log(paymentInfo);
+   return paymentInfo;
+}).catch((err)=>{
+  console.log(err.message); 
+}).finally(() =>{
+    console.log("I will be always called");
     
-    // return proceedToPay(paymentInfo);
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
 // promise will fulfilled after 5 sec
 // setTimeout(() =>{
 //     console.log(promise);
