@@ -27,3 +27,16 @@ const obj = {
 //  this will ref to Object, this.a means obj.a 
  obj.fun();
  
+
+ const obj2 = {
+    name:"abc",
+    fun:  () => {
+        console.log(this);
+        
+    }
+ }
+//  arrow function do not have this bind methods
+// this will ref to its enclosed lexical context,
+//  which is global object here
+ obj2.fun();
+ 
