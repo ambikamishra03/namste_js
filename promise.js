@@ -6,8 +6,8 @@ console.log(user);
 // result - data returned
 // state - pending,rejected,fulfilled
 
-// promise is an object that represents eventual completion 
+// promise is an object that represents eventual completion
 // of asynchronous operation
-user.then((data) =>{    
- console.log(data);
-})
+user.then((data) => {
+  console.log(data);
+});
