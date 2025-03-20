@@ -32,7 +32,9 @@ return true;
 const proceedToPay = (orderId) =>{
   // handle payment
   return new Promise((resolve, reject)=>{
-     resolve("Payment successful");
+     setTimeout(() => {
+      resolve("Payment successful");
+     }, 4000);
   })
 }
 
@@ -43,8 +45,10 @@ createOrder(cart)
     return orderId; 
 }).then((orderId)=>{
    return proceedToPay(orderId);
+
 }).then((paymentInfo) =>{
    console.log(paymentInfo);
+   
    return paymentInfo;
 }).catch((err)=>{
   console.log(err.message); 

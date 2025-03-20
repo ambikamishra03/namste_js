@@ -1,7 +1,9 @@
 
 
 const pr = new Promise((resolve, reject) =>{
-      resolve("promise pr resolved")
+      setInterval(() => {
+        resolve("promise pr resolved")
+      }, 5000);
 })
 // async function getData() {
 //     return pr;
@@ -13,9 +15,14 @@ const pr = new Promise((resolve, reject) =>{
 // console.log(data); 
 
 
+// await keyword only used inside async function
 
 async function handlePromise() {
-    const data = await pr;
+    console.log("hello world");
+    
+    const data = await pr; // js engine was waiting for promise to resolve
+    console.log("js will wait for promise to be resolved then this line will be printed.");
     console.log(data);
+    
 }
 handlePromise();

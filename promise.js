@@ -8,6 +8,6 @@ console.log(user);
 
 // promise is an object that represents eventual completion 
 // of asynchronous operation
-user.then((data) =>{
+user.then((data) =>{    
  console.log(data);
 })
