@@ -61,10 +61,10 @@ const d=NaN;
 let val;
 console.log(typeof val); // undefined(in case of let and var), const will gove syntaxerror
 
-const arr=[1,2,3];
+// const arr=[1,2,3];
+// arr=[4,5]
+// console.log(arr); //TypeError - reassignment to a constant variable.
 
-arr=[4,5]
-console.log(arr); //TypeError - reassignment to a 
 
 
 
