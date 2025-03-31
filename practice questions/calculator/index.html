@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        height: 60px;
+        width: 75px;
+        background-color: rgb(186, 183, 216);
+        margin: 5px;
+        padding: 2px;
+        border: 1px solid rgb(124, 118, 118);
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 30px;
+        cursor: pointer;
+      }
+      #txt {
+        height: 50px;
+        width: 410px;
+        outline: none;
+        padding: 18px;
+        font-size: 25px;
+        margin: 2px;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="position: absolute; margin-top: 8%; margin-left: 35%">
+      <h2
+        style="
+          font-size: 50px;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+        "
+      >
+        Calculator
+      </h2>
+      <input type="text" id="txt" readonly />
+      <div style="display: flex; justify-content: center">
+        <div>
+          <h6 class="box">1</h6>
+          <h6 class="box">4</h6>
+          <h6 class="box">7</h6>
+        </div>
+        <div>
+          <h6 class="box">2</h6>
+          <h6 class="box">5</h6>
+          <h6 class="box">8</h6>
+        </div>
+        <div>
+          <h6 class="box">3</h6>
+          <h6 class="box">6</h6>
+          <h6 class="box">9</h6>
+        </div>
+        <div>
+          <h6 class="box">+</h6>
+          <h6 class="box">-</h6>
+          <h6 class="box">/</h6>
+        </div>
+        <div>
+          <h6 class="box">*</h6>
+          <h6 class="box" id="clear">C</h6>
+          <h6 class="box" id="equal">=</h6>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const buttons = document.getElementsByClassName("box");
+    const txt = document.getElementById("txt");
+
+    for (let button of buttons) {
+      button.addEventListener("click", function () {
+        const val = button.innerText;
+        if (val === "C") {
+          txt.value = "";
+        } else if (val === "=") {
+          try {
+            if (txt.value.trim() === "") {
+              txt.value = "";
+            } else {
+              txt.value = eval(txt.value).toString();
+            }
+          } catch (error) {
+            txt.value = "Error";
+          }
+        } else {
+          txt.value += val;
+        }
+      });
+    } 
+  </script>
+</html>
